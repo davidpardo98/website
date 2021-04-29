@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap4.min.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+  </head>
+  <body>
+    <div class="cuadro">
+          <h1 class="display-4">Bienvenido</h1>
+          <hr class="my-4">
+          <p class="lead">{{session.nombre}}</p>
+    </div>
+    <table id="example" class="table table-dark table-striped" style="width:100%">
+      <thead>
+        <tr>
+          <td>TIPO DOCUMENTO</td>
+          <td>NUMERO DOCUMENTO</td>
+          <td>NOMBRES</td>
+        </tr>
+      </thead>
+      <tbody>
+        {% for datos in datos %}
+        <tr>
+          <td>{{datos.0}}</td>
+          <td>{{datos.1}}</td>
+          <td>{{datos.2}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </body>
+</html>
+<script>
+    $(document).ready(function() {
+    $('#example').DataTable();
+    } );
+</script>

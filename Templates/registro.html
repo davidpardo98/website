@@ -1,0 +1,20 @@
+{% extends "layout.html "%}
+
+{% block content %}
+<p class="lead">Registrese para iniciar</p>
+<form class="form-signin" action="/add" method="POST">
+  <div class="form-group">
+    <label for="exampleInputPassword1">NOMBRE</label>
+    <input type="text" class="form-control" name="nombre" placeholder="Nombre">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">EMAIL</label>
+    <input type="email" class="form-control" name="email" placeholder="Email">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">CONTRASEÑA</label>
+    <input type="password" class="form-control" name="password" placeholder="Contraseña">
+  </div>
+  <button type="submit" class="btn btn-primary">Registrar</button>
+</form>
+{% endblock %}

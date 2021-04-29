@@ -1,0 +1,11 @@
+{% extends "layout.html "%}
+
+{% block content %}
+<div class="jumbotron">
+      <h1 class="display-4">APLICACIÓN WEB</h1>
+      <hr class="my-4">
+      <p class="lead">INICIE SESIÓN PARA CONTINUAR</p>
+      <a name="btn" class="btn btn-prymary btn-lg" href="{{ url_for('login')}}" role="button">INICIO SESIÓN</a>
+      <a href="{{ url_for('registro')}}">¿Aún no se ha Registrado?</a>
+</div>
+{% endblock %}
